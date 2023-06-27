@@ -1,0 +1,71 @@
+/*
+Font: Poppins
+Font-weights: 400, 500, 600, 700, 800
+*/
+
+/*@font-face {*/
+/*    font-family: 'Poppins Regular';*/
+/*    src: url("../fonts/Poppins-Regular.ttf");*/
+/*    font-weight: 400;*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: 'Poppins Medium';*/
+/*    src: url("../fonts/Poppins-Medium.ttf");*/
+/*    font-weight: 500;*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: 'Poppins Semibold';*/
+/*    src: url("../fonts/Poppins-SemiBold.ttf");*/
+/*    font-weight: 600;*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: 'Poppins Bold';*/
+/*    src: url("../fonts/Poppins-Bold.ttf");*/
+/*    font-weight: 700;*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: 'Poppins ExtraBold';*/
+/*    src: url("../fonts/Poppins-ExtraBold.ttf");*/
+/*    font-weight: 800;*/
+/*}*/
+
+.root {
+    -fx-font-size: 16px;
+    /*-fx-font-family: 'Poppins Regular', sans-serif;*/
+}
+
+.title {
+    -fx-fill: #132050;
+    /*-fx-font-family: 'Poppins Bold', sans-serif;*/
+    -fx-font-weight: 600;
+    -fx-font-size: 2em;
+    -fx-text-alignment: center;
+}
+
+.sidebar { -fx-background-color: #d9d9d9; }
+.sidebar-menu-label { -fx-fill: #132050; }
+
+.body { -fx-background-color: #FFFFFF; }
+
+.btn {
+    -fx-padding: .5em 1em;
+    -fx-border-radius: .5em;
+    -fx-font-size: 1.125em;
+    -fx-background-color: #132050;
+    /*-fx-font-family: "Poppins SemiBold";*/
+    -fx-text-fill: #FFFFFF;
+}
+
+.btn:hover {
+    -fx-cursor: hand;
+}
+
+.input {
+    -fx-background-color: #fafafa;
+    -fx-border-radius: 1em;
+    /*-fx-font-family: "Poppins Medium";*/
+}

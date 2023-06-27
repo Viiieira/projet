@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.adminController">
+    <AnchorPane prefHeight="600.0" prefWidth="216.0" styleClass="sidebar">
+        <Button fx:id="encerrarSessaoButton" layoutX="16.0" layoutY="540.0" mnemonicParsing="false" styleClass="btn" text="Encerrar Sessão">
+            <padding>
+                <Insets bottom="8.0" left="16.0" right="16.0" top="8.0" />
+            </padding>
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+      <AnchorPane layoutX="16.0" layoutY="75.0" prefHeight="65.0" prefWidth="96.0">
+         <children>
+            <Text fill="WHITE" layoutX="-1.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sidebar-menu-label" text="Menu" textAlignment="CENTER">
+               <font>
+                  <Font name="SansSerif Bold" size="18.0" />
+               </font>
+            </Text>
+              <Button fx:id="produtosButton" layoutY="25.0" mnemonicParsing="false" styleClass="btn" text="Produtos">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+        <Text fill="WHITE" layoutX="56.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Admin" textAlignment="CENTER">
+            <font>
+                <Font name="SansSerif Bold" size="32.0" />
+            </font>
+        </Text>
+    </AnchorPane>
+    <Button fx:id="criarContaButton" layoutX="238.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="93.0" styleClass="btn" text="Criar Conta" />
+    <TableView fx:id="userTable" layoutX="300.0" layoutY="168.0" prefHeight="200.0" prefWidth="386.0">
+        <columns>
+            <TableColumn fx:id="tableId" prefWidth="75.0" text="id" />
+            <TableColumn fx:id="tableNome" prefWidth="75.0" text="nome" />
+            <TableColumn fx:id="tableEmail" prefWidth="75.0" text="email" />
+            <TableColumn fx:id="tableTelefone" prefWidth="75.0" text="telefone" />
+            <TableColumn fx:id="tableNif" prefWidth="75.0" text="nif" />
+        </columns>
+    </TableView>
+    <Button fx:id="refresh" layoutX="343.0" layoutY="23.0" mnemonicParsing="false" styleClass="btn" text="atualizar" />
+</AnchorPane>
