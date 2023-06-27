@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal Page</title>
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-free-6.4.0-web/css/all.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<h1>Welcome to the personal page</h1>
+
+<h3>
+    <ul>
+        <li>ID: <span th:text="${userLogin.getId()}"></span></li>
+        <li>Username: <span th:text="${userLogin.getLogin()}"></span></li>
+        <li>Email: <span th:text="${userLogin.getEmail()}"></span></li>
+        <li>
+            <button type="button" onclick="window.location.href='/logout'" class="btn" data-style="primary">
+                Logout
+            </button>
+        </li>
+    </ul>
+</h3>
+
+</body>
+</html>
