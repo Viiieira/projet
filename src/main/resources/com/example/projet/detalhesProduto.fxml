@@ -5,15 +5,14 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="373.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.detalhesProduto">
    <children>
-      <Button layoutX="44.0" layoutY="338.0" mnemonicParsing="false" text="Apagar" />
-      <Button layoutX="169.0" layoutY="338.0" mnemonicParsing="false" text="Editar" />
-      <Button layoutX="286.0" layoutY="338.0" mnemonicParsing="false" text="Sair" />
+      <Button fx:id="apagarButton" layoutX="44.0" layoutY="338.0" mnemonicParsing="false" text="Apagar" />
+      <Button fx:id="editarButton" layoutX="169.0" layoutY="338.0" mnemonicParsing="false" text="Editar" />
+      <Button fx:id="sairButton" layoutX="286.0" layoutY="338.0" mnemonicParsing="false" text="Sair" />
       <Label layoutX="44.0" layoutY="29.0" text="Nome" />
       <Label layoutX="44.0" layoutY="61.0" text="Categoria" />
       <Label layoutX="44.0" layoutY="94.0" text="Preço" />
       <Label layoutX="44.0" layoutY="124.0" text="Stock" />
       <TextField fx:id="NomeField" layoutX="94.0" layoutY="25.0" />
-      <TextField fx:id="CategoriaField" layoutX="95.0" layoutY="57.0" />
       <TextField fx:id="PrecoField" layoutX="95.0" layoutY="90.0" />
       <TextField fx:id="StockField" layoutX="96.0" layoutY="120.0" />
       <Label fx:id="nomeError" layoutX="246.0" layoutY="29.0" textFill="RED" />
@@ -21,5 +20,6 @@
       <Label fx:id="precoError" layoutX="246.0" layoutY="94.0" textFill="RED" />
       <Label fx:id="StockError" layoutX="246.0" layoutY="124.0" textFill="RED" />
       <Label fx:id="EmptyError" layoutX="155.0" layoutY="183.0" textFill="RED" />
+      <ComboBox fx:id="CategoriaComboBox" layoutX="96.0" layoutY="57.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
