@@ -20,5 +20,6 @@
       <Button fx:id="voltarButton" layoutX="41.0" layoutY="340.0" mnemonicParsing="false" text="Voltar" />
       <Button fx:id="addCategory" layoutX="35.0" layoutY="59.0" mnemonicParsing="false" text="adicionar categoria" />
       <Button fx:id="refresh" layoutX="184.0" layoutY="27.0" mnemonicParsing="false" text="atualizar" />
+      <Button fx:id="addSupplier" layoutX="42.0" layoutY="92.0" mnemonicParsing="false" text="Fazer ecomenda" />
    </children>
 </AnchorPane>

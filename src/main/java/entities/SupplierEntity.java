@@ -13,6 +13,21 @@ public class SupplierEntity {
     @Column(name = "name")
     private String name;
 
+    @Basic
+    @Column(name = "email")
+    private String email;
+
+    @Basic
+    @Column(name = "phone")
+    private String phone;
+
+    public SupplierEntity(int id, String name, String email, String phone){
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
+
     public int getId() {
         return id;
     }
@@ -27,6 +42,22 @@ public class SupplierEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override
@@ -47,5 +78,8 @@ public class SupplierEntity {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         return result;
+    }
+
+    public void add(SupplierEntity suplliers) {
     }
 }

@@ -23,6 +23,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ProductController {
+
+    @FXML
+    private Button addSupplier;
     @FXML
     private Button refresh;
     @FXML
@@ -65,6 +68,10 @@ public class ProductController {
 
         addCategory.setOnAction(e -> {
             openWindow("createCategory.fxml");
+        });
+
+        addSupplier.setOnAction(e ->{
+            openWindow("SupplierController.fxml");
         });
 
         refresh.setOnAction(e -> {
