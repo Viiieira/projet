@@ -278,6 +278,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    padding: 1.5rem 3rem;
 }
 
 nav ul {
@@ -288,11 +289,7 @@ nav ul {
     list-style: none;
 }
 
-main {
-    width: clamp(16rem, 90vw, 70rem);
-    margin-inline: auto;
-}
-
 section {
-    padding-block: 1.5rem;
+    padding: 1rem 3rem 3rem 3rem;
+    background-color: var(--clr-card);
 }
