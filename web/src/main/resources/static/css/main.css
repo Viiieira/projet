@@ -271,3 +271,28 @@ textarea:focus-within {
     padding: 1rem 3rem 3rem 3rem;
     background-color: var(--clr-card);
 }
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+}
+
+main {
+    width: clamp(16rem, 90vw, 70rem);
+    margin-inline: auto;
+}
+
+section {
+    padding-block: 1.5rem;
+}

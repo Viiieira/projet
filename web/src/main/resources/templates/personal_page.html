@@ -11,22 +11,13 @@
 </head>
 <body>
 
-<h1>Welcome to the personal page</h1>
 
-<h3>
-    <ul>
-        <li>ID: <span th:text="${userLogin.getId()}"></span></li>
-        <li>Username: <span th:text="${userLogin.getName()}"></span></li>
-        <li>Email: <span th:text="${userLogin.getEmail()}"></span></li>
-        <li>NIF: <span th:text="${userLogin.getNif()}"></span></li>
-        <li>Phone: <span th:text="${userLogin.getPhone()}"></span></li>
-        <li>
-            <button type="button" onclick="window.location.href='/logout'" class="btn" data-style="primary">
-                Logout
-            </button>
-        </li>
-    </ul>
-</h3>
+<main>
+    <div th:replace="navbar.html :: navbar"></div>
+    <section>
+        <h1>Welcome <span th:text="${userLogin.getName()}"></span></h1>
+    </section>
+</main>
 
 </body>
 </html>

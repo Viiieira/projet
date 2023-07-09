@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "manager", schema = "public", catalog = "proj")
 public class ManagerEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
     private int id;

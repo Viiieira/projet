@@ -11,7 +11,6 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 public class AdminEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
     private int id;
