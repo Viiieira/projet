@@ -16,8 +16,10 @@
 <h3>
     <ul>
         <li>ID: <span th:text="${userLogin.getId()}"></span></li>
-        <li>Username: <span th:text="${userLogin.getLogin()}"></span></li>
+        <li>Username: <span th:text="${userLogin.getName()}"></span></li>
         <li>Email: <span th:text="${userLogin.getEmail()}"></span></li>
+        <li>NIF: <span th:text="${userLogin.getNif()}"></span></li>
+        <li>Phone: <span th:text="${userLogin.getPhone()}"></span></li>
         <li>
             <button type="button" onclick="window.location.href='/logout'" class="btn" data-style="primary">
                 Logout

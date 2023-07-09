@@ -2,35 +2,54 @@ package com.example.web.models;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
-
 @Entity
-@Table(name = "users")
+@Table(name = "users", schema = "public", catalog = "proj")
 public class UsersModel {
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    @Id
+    @Column(name = "id")
+    private int id;
+    @Basic
+    @Column(name = "name")
+    private String name;
+    @Basic
+    @Column(name = "email")
+    private String email;
+    @Basic
+    @Column(name = "password")
+    private String password;
 
-    String login;
+    @Basic
+    @Column(name = "phone")
+    private String phone;
+    @Basic
+    @Column(name = "nif")
+    private String nif;
 
-    String email;
+    public UsersModel(int id, String email, String nif, String name, String phone) {
+        this.id = id;
+        this.email = email;
+        this.nif = nif;
+        this.name = name;
+        this.phone = phone;
+    }
 
-    String password;
+    public UsersModel() {}
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getName() {
+        return name;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -49,25 +68,43 @@ public class UsersModel {
         this.password = password;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getNif() {
+        return nif;
+    }
+
+    public void setNif(String nif) {
+        this.nif = nif;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         UsersModel that = (UsersModel) o;
-        return Objects.equals(id, that.id) && Objects.equals(login, that.login) && Objects.equals(email, that.email) && Objects.equals(password, that.password);
+
+        if (id != that.id) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
+        if (password != null ? !password.equals(that.password) : that.password != null) return false;
+
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, login, email, password);
-    }
-
-    @Override
-    public String toString() {
-        return "UsersModel{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        int result = id;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        return result;
     }
 }

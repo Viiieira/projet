@@ -1,6 +1,8 @@
 package com.example.web.services;
 
+import com.example.web.models.CustomerEntity;
 import com.example.web.models.UsersModel;
+import com.example.web.repository.CustomerRepository;
 import com.example.web.repository.UsersRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,30 +12,46 @@ import static com.example.web.utils.Utils.*;
 public class UsersService {
 
     private final UsersRepository usersRepository;
+    private final CustomerRepository customerRepository;
 
-    public UsersService(UsersRepository usersRepository) {
+    public UsersService(UsersRepository usersRepository, CustomerRepository customerRepository) {
+
         this.usersRepository = usersRepository;
+        this.customerRepository = customerRepository;
     }
 
-    public UsersModel registerUser(String login, String password, String email) {
-        if (isNull(login, email, password)) {
+    public UsersModel registerUser(String name, String email, String nif, String phone, String password) {
+        if (isNull(name, email, nif, phone, password)) {
             return null;
         } else {
-            if(usersRepository.findByLoginOrEmail(login, email).isPresent()) {
+            if(usersRepository.findByName(name).isPresent()) {
                 // TODO: Turn this Sout into alert for the frontend
                 System.out.println("duplicated user");
                 return null;
             }
             UsersModel usersModel = new UsersModel();
-            usersModel.setLogin(login);
+            usersModel.setName(name);
             usersModel.setPassword(hashPassword(password));
             usersModel.setEmail(email);
-            return usersRepository.save(usersModel);
+            usersModel.setNif(nif);
+            usersModel.setPhone(phone);
+            UsersModel savedUser = usersRepository.save(usersModel);
+
+            System.out.println("ID do User novo: "
+                    +savedUser.getId()
+                    +savedUser.getName()
+                    +savedUser.getEmail());
+
+            CustomerEntity customerEntity = new CustomerEntity();
+            customerEntity.setId(savedUser.getId());
+
+            customerRepository.save(customerEntity);
+            return savedUser;
         }
     }
 
-    public UsersModel authenticate(String login, String password) {
-        UsersModel usersModel = usersRepository.findByLogin(login).orElse(null);
+    public UsersModel authenticate(String name, String password) {
+        UsersModel usersModel = usersRepository.findByName(name).orElse(null);
         if (usersModel != null && verifyPassword(password, usersModel.getPassword())) {
             return usersModel;
         }

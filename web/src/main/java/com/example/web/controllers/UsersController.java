@@ -56,7 +56,7 @@ public class UsersController {
 
     @PostMapping("/register")
     public String register(@ModelAttribute UsersModel usersModel, RedirectAttributes redirectAttributes) {
-        UsersModel registeredUser = usersService.registerUser(usersModel.getLogin(), usersModel.getPassword(), usersModel.getEmail());
+        UsersModel registeredUser = usersService.registerUser(usersModel.getName(), usersModel.getEmail(), usersModel.getNif(), usersModel.getPhone(), usersModel.getPassword());
         if (registeredUser == null) {
             redirectAttributes.addFlashAttribute("errorRegister", "Please check your information and try again");
             return "redirect:/register";
@@ -67,7 +67,7 @@ public class UsersController {
 
     @PostMapping("/login")
     public String login(@ModelAttribute UsersModel usersModel, RedirectAttributes redirectAttributes) {
-        UsersModel authenticated = usersService.authenticate(usersModel.getLogin(), usersModel.getPassword());
+        UsersModel authenticated = usersService.authenticate(usersModel.getName(), usersModel.getPassword());
         if (authenticated == null) {
             redirectAttributes.addFlashAttribute("errorLogin", "Invalid username or password");
             return "redirect:/login";
