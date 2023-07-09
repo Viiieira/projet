@@ -64,9 +64,7 @@ public class SupplierController {
 
                 Stage newStage = new Stage();
                 newStage.setScene(new Scene(root));
-                newStage.show(); // Open the new window
-
-
+                newStage.show();
             } catch (IOException a) {
                 a.printStackTrace();
             }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.detalhesOrder">
+    <!-- Outros elementos do FXML -->
+   <children>
+      <TableView fx:id="table" layoutX="135.0" layoutY="75.0" prefHeight="200.0" prefWidth="351.0">
+        <columns>
+          <TableColumn fx:id="FornecedorColumn" prefWidth="96.0" text="Fornecedor" />
+            <TableColumn fx:id="ProdutoColumn" prefWidth="100.79998779296875" text="Nome Produto" />
+            <TableColumn fx:id="QuantidadeColumn" prefWidth="79.20001220703125" text="Quantidade" />
+        </columns>
+      </TableView>
+      <Button fx:id="sairBottun" layoutX="37.0" layoutY="262.0" mnemonicParsing="false" text="Sair" />
+   </children>
+</AnchorPane>

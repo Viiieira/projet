@@ -25,8 +25,6 @@ import java.sql.SQLException;
 public class ProductController {
 
     @FXML
-    private Button addSupplier;
-    @FXML
     private Button refresh;
     @FXML
     private Button addCategory;
@@ -70,9 +68,6 @@ public class ProductController {
             openWindow("createCategory.fxml");
         });
 
-        addSupplier.setOnAction(e ->{
-            openWindow("SupplierController.fxml");
-        });
 
         refresh.setOnAction(e -> {
             // Clear the existing items in the table

@@ -153,15 +153,6 @@ public class createSupllierController {
             Stage currentStage = (Stage) cancelarButton.getScene().getWindow();
             currentStage.close();
 
-            /*
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("confirmCreateAccount.fxml"));
-            Parent root = loader.load();
-            Scene confirmScene = new Scene(root);
-
-            Stage confirmStage = new Stage();
-            confirmStage.setScene(confirmScene);
-            confirmStage.show();
-            */
 
         } catch (SQLException ex) {
             ex.printStackTrace();

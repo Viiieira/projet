@@ -65,6 +65,7 @@ public class Main extends Application {
 
     private void createAdminUser() {
         dbConnection = new dataBaseConnection();
+
         String insertAdmin = "INSERT INTO Users (name, email, phone, nif, password)\n" +
                 "VALUES ('a', 'a@admin.com', '964159753', '741369852', 'a');\n" +
                 "INSERT INTO admin (id)\n" +
@@ -73,7 +74,7 @@ public class Main extends Application {
 
         try (Connection connection = dbConnection.getConnection();
              PreparedStatement statementInsert = connection.prepareStatement(insertAdmin)) {
-            statementInsert.executeUpdate();
+             statementInsert.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

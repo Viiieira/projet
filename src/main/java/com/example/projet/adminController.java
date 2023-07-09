@@ -21,9 +21,9 @@ import java.util.List;
 
 public class adminController {
     @FXML
-    private AnchorPane anchorPane;
-    @FXML
     private Button produtosButton;
+    @FXML
+    private Button FornecedorButton;
     @FXML
     private Button refresh;
     @FXML
@@ -42,6 +42,9 @@ public class adminController {
     private TableColumn<UsersEntity, String> tableNome;
     @FXML
     private TableColumn<UsersEntity, String> tableTelefone;
+
+    @FXML
+    private Button SupplierOrder;
 
     @FXML
     public void initialize() {
@@ -71,6 +74,14 @@ public class adminController {
             } catch (IOException a) {
                 a.printStackTrace();
             }
+        });
+
+        FornecedorButton.setOnAction(e ->{
+            openWindow("SupplierController.fxml");
+        });
+
+        SupplierOrder.setOnAction(e ->{
+            openWindow("SupplierOrderController.fxml");
         });
 
         refresh.setOnAction(e -> {
@@ -141,9 +152,11 @@ public class adminController {
         dataBaseConnection dbConnection = new dataBaseConnection();
         Connection conn = dbConnection.getConnection();
 
+        String query = "SELECT * FROM users";
+
         if (conn != null) {
             try {
-                String query = "SELECT * FROM users";
+
                 PreparedStatement statement = conn.prepareStatement(query);
                 ResultSet resultSet = statement.executeQuery();
 
@@ -194,5 +207,18 @@ public class adminController {
 
         // Adiciona os usuários atualizados à tabela
         userTable.getItems().addAll(updatedUsers);
+    }
+
+    private void openWindow(String fxmlFile) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            AnchorPane root = loader.load();
+
+            Stage newStage = new Stage();
+            newStage.setScene(new Scene(root));
+            newStage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 }
