@@ -1,5 +1,6 @@
 package com.example.web.controllers;
 
+import com.example.web.models.ProductCategoryEntity;
 import com.example.web.models.UsersModel;
 import com.example.web.services.UsersService;
 import org.springframework.stereotype.Controller;
@@ -10,15 +11,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import com.example.web.repository.CategoryProductsRepository;
+
+import java.util.List;
 
 @Controller
 @SessionAttributes("userLogin")
 public class UsersController {
 
     private final UsersService usersService;
+    private final CategoryProductsRepository categoryRepository;
 
-    public UsersController(UsersService usersService) {
+    public UsersController(UsersService usersService, CategoryProductsRepository categoryRepository) {
+
         this.usersService = usersService;
+        this.categoryRepository = categoryRepository;
     }
 
     @GetMapping("/personal_page")
@@ -34,8 +41,25 @@ public class UsersController {
 
     @GetMapping("/register")
     public String getRegisterPage(Model model) {
+        if (model.containsAttribute("userLogin")) {
+            System.out.println("User already logged in, redirecting to personal page...");
+            return "redirect:/personal_page";
+        }
         model.addAttribute("registerRequest", new UsersModel());
         return "register_page";
+    }
+
+    @GetMapping("/products")
+    public String getProductspage(Model model) {
+        if (!model.containsAttribute("userLogin")) {
+            System.out.println("No logged user, redirecting to login");
+            return "redirect:/login";
+        }
+
+        List<ProductCategoryEntity> categories = categoryRepository.findAll();
+        model.addAttribute("categories", categories);
+
+        return "products_page";
     }
 
     @GetMapping("/login")

@@ -37,11 +37,6 @@ public class UsersService {
             usersModel.setPhone(phone);
             UsersModel savedUser = usersRepository.save(usersModel);
 
-            System.out.println("ID do User novo: "
-                    +savedUser.getId()
-                    +savedUser.getName()
-                    +savedUser.getEmail());
-
             CustomerEntity customerEntity = new CustomerEntity();
             customerEntity.setId(savedUser.getId());
 

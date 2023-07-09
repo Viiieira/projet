@@ -53,6 +53,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     font-size: var(--p);
+    margin-inline: 1rem;
 }
 
 img,
@@ -152,7 +153,7 @@ textarea:focus-within {
 
 /* Components */
 .container {
-    width: min(100% - 1rem, 80ch);
+    width: min(100% - 1rem, 150ch);
     margin-inline: auto;
 }
 
@@ -292,4 +293,29 @@ nav ul {
 section {
     padding: 1rem 3rem 3rem 3rem;
     background-color: var(--clr-card);
+}
+
+section h1,
+section h2,
+section h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.category-products {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.category-products h2 {
+    text-align: left;
+}
+
+.category-products-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }

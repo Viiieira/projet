@@ -13,6 +13,8 @@ public class ProductCategoryEntity {
     @Column(name = "name")
     private String name;
 
+    public ProductCategoryEntity() {}
+
     public ProductCategoryEntity(int id, String name) {
     }
 

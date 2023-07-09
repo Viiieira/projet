@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-free-6.4.0-web/css/all.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div th:replace="~{navbar.html :: navbar}"></div>
+
+<main class="container">
+  <section>
+    <h1>Products</h1>
+
+    <div class="category-products">
+      <h2>Category Name</h2>
+
+      <ul>
+        <li th:each="category : ${categories}">
+          <span th:text="${category.name}"></span>
+        </li>
+      </ul>
+
+      <div class="category-products-wrapper">
+        <div class="product">
+          <div class="product-info">
+            <p>Name</p>
+            <p>Price €</p>
+            <p>Stock</p>
+          </div>
+          <button class="add-to-cart-btn btn" data-style="primary">
+              <i class="fa-solid fa-cart-shopping"></i>
+             <span>Add to Cart</span>
+          </button>
+        </div>
+        <div class="product">
+          <div class="product-info">
+            <p>Name</p>
+            <p>Price €</p>
+            <p>Stock</p>
+          </div>
+          <button class="add-to-cart-btn btn" data-style="primary">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Add to Cart</span>
+          </button>
+        </div>
+        <div class="product">
+          <div class="product-info">
+            <p>Name</p>
+            <p>Price €</p>
+            <p>Stock</p>
+          </div>
+          <button class="add-to-cart-btn btn" data-style="primary">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Add to Cart</span>
+          </button>
+        </div>
+        <div class="product">
+          <div class="product-info">
+            <p>Name</p>
+            <p>Price €</p>
+            <p>Stock</p>
+          </div>
+          <button class="add-to-cart-btn btn" data-style="primary">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Add to Cart</span>
+          </button>
+        </div>
+        <div class="product">
+          <div class="product-info">
+            <p>Name</p>
+            <p>Price €</p>
+            <p>Stock</p>
+          </div>
+          <button class="add-to-cart-btn btn" data-style="primary">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Add to Cart</span>
+          </button>
+        </div>
+        <div class="product">
+          <div class="product-info">
+            <p>Name</p>
+            <p>Price €</p>
+            <p>Stock</p>
+          </div>
+          <button class="add-to-cart-btn btn" data-style="primary">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Add to Cart</span>
+          </button>
+        </div>
+        <div class="product">
+          <div class="product-info">
+            <p>Name</p>
+            <p>Price €</p>
+            <p>Stock</p>
+          </div>
+          <button class="add-to-cart-btn btn" data-style="primary">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Add to Cart</span>
+          </button>
+        </div>
+        <div class="product">
+          <div class="product-info">
+            <p>Name</p>
+            <p>Price €</p>
+            <p>Stock</p>
+          </div>
+          <button class="add-to-cart-btn btn" data-style="primary">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Add to Cart</span>
+          </button>
+        </div>
+        <div class="product">
+          <div class="product-info">
+            <p>Name</p>
+            <p>Price €</p>
+            <p>Stock</p>
+          </div>
+          <button class="add-to-cart-btn btn" data-style="primary">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Add to Cart</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
