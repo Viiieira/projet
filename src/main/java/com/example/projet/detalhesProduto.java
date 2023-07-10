@@ -79,6 +79,7 @@ public class detalhesProduto {
 
         setFieldsEditable(false);
     }
+
     private String categoriaAtual(int id) {
         String SelectNome = "SELECT name from productcategory where id = ?;";
         String nome = null;
@@ -94,7 +95,6 @@ public class detalhesProduto {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return nome;
     }
 

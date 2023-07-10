@@ -5,16 +5,18 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.detalhesOrder">
+<AnchorPane prefHeight="261.0" prefWidth="512.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.detalhesOrder">
     <!-- Outros elementos do FXML -->
    <children>
-      <TableView fx:id="table" layoutX="135.0" layoutY="75.0" prefHeight="200.0" prefWidth="351.0">
+      <TableView fx:id="table" layoutX="153.0" layoutY="31.0" prefHeight="200.0" prefWidth="351.0">
         <columns>
           <TableColumn fx:id="FornecedorColumn" prefWidth="96.0" text="Fornecedor" />
             <TableColumn fx:id="ProdutoColumn" prefWidth="100.79998779296875" text="Nome Produto" />
-            <TableColumn fx:id="QuantidadeColumn" prefWidth="79.20001220703125" text="Quantidade" />
+            <TableColumn fx:id="CategoriaCollumn" prefWidth="79.20001220703125" text="Categoria" />
+            <TableColumn fx:id="QuantidadeColumn" prefWidth="75.0" text="Quantidade" />
         </columns>
       </TableView>
-      <Button fx:id="sairBottun" layoutX="37.0" layoutY="262.0" mnemonicParsing="false" text="Sair" />
+      <Button fx:id="sairBottun" layoutX="61.0" layoutY="205.0" mnemonicParsing="false" text="Sair" />
+      <Button fx:id="AcceptButton" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" text="Encomenda Entregue" />
    </children>
 </AnchorPane>

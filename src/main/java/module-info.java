@@ -4,6 +4,7 @@ module com.example.projet {
     requires java.sql;
     requires jakarta.persistence;
     requires lombok;
+    requires java.desktop;
 
 
     opens com.example.projet to javafx.fxml;

@@ -32,7 +32,7 @@ public class SupplierOrderEntity {
     @Column(name = "state")
     private String state;
 
-    public SupplierOrderEntity(int id, int idSupplier, String nameOrder, Date dateRequested, Date dateProvided, String state) {
+    public SupplierOrderEntity(int id, String nameOrder, Date dateRequested, Date dateProvided, String state) {
         this.id = id;
         this.idSupplier = idSupplier;
         this.nameOrder = nameOrder;

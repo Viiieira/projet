@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -73,6 +74,14 @@ public class SupplierOrderController {
             }
         });
 
+        ViewAceptOrderButton.setOnAction(e -> {
+            openWindow("viewAceptOrder.fxml");
+        });
+
+        createOrderButton.setOnAction(e -> {
+            openWindow("createOrder.fxml");
+        });
+
         refreshButton.setOnAction(e -> {
             // Limpar os itens existentes na tabela
             table.getItems().clear();
@@ -103,13 +112,12 @@ public class SupplierOrderController {
 
                 while (resultSet.next()) {
                     int id = resultSet.getInt("ID");
-                    int idSupplier = resultSet.getInt("idSupplier");
                     String nameOrder = resultSet.getString("nameOrder");
                     Date dateRequested = resultSet.getDate("dateRequested");
                     Date dateProvided = resultSet.getDate("dateProvided");
                     String state = resultSet.getString("state");
 
-                    SupplierOrderEntity order = new SupplierOrderEntity(id, idSupplier, nameOrder, dateRequested, dateProvided, state);
+                    SupplierOrderEntity order = new SupplierOrderEntity(id, nameOrder, dateRequested, dateProvided, state);
                     orders.add(order);
                 }
             } catch (SQLException e) {
@@ -130,7 +138,6 @@ public class SupplierOrderController {
             detalhesOrder detalhesoder = loader.getController();
 
             // Define os detalhes do pedido no controlador da nova janela
-            System.out.println(order + "a");
             detalhesoder.setOrderDetails(order);
 
 
@@ -145,5 +152,18 @@ public class SupplierOrderController {
     private void closeApplication() {
         Stage currentStage = (Stage) voltarButton.getScene().getWindow();
         currentStage.close();
+    }
+
+    private void openWindow(String fxmlFile) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            AnchorPane root = loader.load();
+
+            Stage newStage = new Stage();
+            newStage.setScene(new Scene(root));
+            newStage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 }
