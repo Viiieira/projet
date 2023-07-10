@@ -5,10 +5,16 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.ProductController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="683.0" styleClass="body" stylesheets="@styles/main.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.ProductController">
    <children>
-      <Button fx:id="addProduto" layoutX="37.0" layoutY="27.0" mnemonicParsing="false" text="adicionar produto" />
-      <TableView fx:id="tableProduct" layoutX="192.0" layoutY="175.0" prefHeight="200.0" prefWidth="386.0">
+      <AnchorPane prefHeight="400.0" prefWidth="229.0" styleClass="sidebar">
+         <children>
+            <Button fx:id="voltarButton" layoutX="10.0" layoutY="344.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="194.0" styleClass="btn" text="Voltar" />
+            <Button fx:id="addCategory" layoutX="16.0" layoutY="63.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="194.0" styleClass="btn" text="Adicionar Categoria" />
+            <Button fx:id="addProduto" layoutX="17.0" layoutY="8.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="194.0" styleClass="btn" text="Adicionar Produto" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableProduct" layoutX="265.0" layoutY="125.0" prefHeight="200.0" prefWidth="386.0">
         <columns>
           <TableColumn fx:id="tableId" prefWidth="75.0" text="id" />
           <TableColumn fx:id="tableNome" prefWidth="75.0" text="nome" />
@@ -17,8 +23,6 @@
             <TableColumn fx:id="tableQuantidade" prefWidth="75.0" text="quantidade" />
         </columns>
       </TableView>
-      <Button fx:id="voltarButton" layoutX="41.0" layoutY="340.0" mnemonicParsing="false" text="Voltar" />
-      <Button fx:id="addCategory" layoutX="35.0" layoutY="59.0" mnemonicParsing="false" text="adicionar categoria" />
-      <Button fx:id="refresh" layoutX="184.0" layoutY="27.0" mnemonicParsing="false" text="atualizar" />
+      <Button fx:id="refresh" layoutX="544.0" layoutY="70.0" mnemonicParsing="false" styleClass="btn" text="Atualizar" />
    </children>
 </AnchorPane>

@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="158.0" prefWidth="194.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.acceptOrder">
    <children>
       <Label layoutX="49.0" layoutY="39.0" text="Confirmar entrega" />
-      <Button fx:id="CancelarButton" layoutX="14.0" layoutY="100.0" mnemonicParsing="false" text="Cancelar" />
-      <Button fx:id="confirmarButton" layoutX="111.0" layoutY="100.0" mnemonicParsing="false" text="Confirmar" />
+      <Button fx:id="CancelarButton" layoutX="14.0" layoutY="100.0" mnemonicParsing="false" text="Cancelar" styleClass ="btn" />
+      <Button fx:id="confirmarButton" layoutX="111.0" layoutY="100.0" mnemonicParsing="false" text="Confirmar" styleClass="btn" />
    </children>
 </AnchorPane>

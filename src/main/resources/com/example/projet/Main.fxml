@@ -20,7 +20,7 @@
     <Text layoutX="42.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
     <PasswordField fx:id="passField" layoutX="42.0" layoutY="242.0" prefHeight="25.0" prefWidth="268.0" styleClass="input" />
     <Label fx:id="labelMensage" layoutX="5.0" layoutY="349.0" prefHeight="17.0" prefWidth="300.0" textFill="#f40101" />
-    <Text fill="#00ff09" layoutX="64.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="admin - (a,a)" wrappingWidth="292.8125" />
-    <Text fill="#00ff09" layoutX="63.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="costumer - (c,c)" wrappingWidth="291.44268798828125" />
-    <Text fill="#00ff09" layoutX="63.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="manager - (m,m)" wrappingWidth="300.3853759765625" />
+    <Text fill="#00ff0900" layoutX="64.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="admin - (a,a)" wrappingWidth="292.8125" />
+    <Text fill="#00ff0900" layoutX="63.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="costumer - (c,c)" wrappingWidth="291.44268798828125" />
+    <Text fill="#00ff0900" layoutX="63.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="manager - (m,m)" wrappingWidth="300.3853759765625" />
 </AnchorPane>

@@ -8,9 +8,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.adminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="body" stylesheets="@styles/main.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.adminController">
     <AnchorPane prefHeight="600.0" prefWidth="216.0" styleClass="sidebar">
-        <Button fx:id="encerrarSessaoButton" layoutX="16.0" layoutY="540.0" mnemonicParsing="false" styleClass="btn" text="Encerrar Sessão">
+        <Button fx:id="encerrarSessaoButton" layoutX="16.0" layoutY="540.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="186.0" styleClass="btn" text="Encerrar Sessão">
             <padding>
                 <Insets bottom="8.0" left="16.0" right="16.0" top="8.0" />
             </padding>
@@ -25,7 +25,7 @@
                   <Font name="SansSerif Bold" size="18.0" />
                </font>
             </Text>
-              <Button fx:id="produtosButton" layoutY="25.0" mnemonicParsing="false" styleClass="btn" text="Produtos">
+              <Button fx:id="produtosButton" layoutY="25.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="186.0" styleClass="btn" text="Produtos">
                <font>
                   <Font size="18.0" />
                </font>
@@ -37,26 +37,26 @@
                 <Font name="SansSerif Bold" size="32.0" />
             </font>
         </Text>
-      <Button fx:id="FornecedorButton" layoutX="16.0" layoutY="155.0" mnemonicParsing="false" text="Fornecedor">
+      <Button fx:id="FornecedorButton" layoutX="16.0" layoutY="155.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="186.0" styleClass="btn" text="Fornecedor">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="SupplierOrder" layoutX="17.0" layoutY="210.0" mnemonicParsing="false" text="Fazer Ecomenda">
+      <Button fx:id="SupplierOrder" layoutX="17.0" layoutY="210.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="186.0" styleClass="btn" text="Fazer Encomenda">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
     </AnchorPane>
-    <Button fx:id="criarContaButton" layoutX="238.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="93.0" styleClass="btn" text="Criar Conta" />
-    <TableView fx:id="userTable" layoutX="300.0" layoutY="168.0" prefHeight="200.0" prefWidth="386.0">
+    <Button fx:id="criarContaButton" layoutX="603.0" layoutY="541.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="176.0" styleClass="btn" text="Criar Conta" />
+    <TableView fx:id="userTable" layoutX="251.0" layoutY="182.0" prefHeight="290.0" prefWidth="532.0">
         <columns>
-            <TableColumn fx:id="tableId" prefWidth="75.0" text="id" />
-            <TableColumn fx:id="tableNome" prefWidth="75.0" text="nome" />
-            <TableColumn fx:id="tableEmail" prefWidth="75.0" text="email" />
-            <TableColumn fx:id="tableTelefone" prefWidth="75.0" text="telefone" />
-            <TableColumn fx:id="tableNif" prefWidth="75.0" text="nif" />
+            <TableColumn fx:id="tableId" prefWidth="47.20001220703125" text="id" />
+            <TableColumn fx:id="tableNome" prefWidth="117.60003662109375" text="nome" />
+            <TableColumn fx:id="tableEmail" prefWidth="123.20001220703125" text="email" />
+            <TableColumn fx:id="tableTelefone" prefWidth="104.79998779296875" text="telefone" />
+            <TableColumn fx:id="tableNif" prefWidth="128.0" text="nif" />
         </columns>
     </TableView>
-    <Button fx:id="refresh" layoutX="343.0" layoutY="23.0" mnemonicParsing="false" styleClass="btn" text="atualizar" />
+    <Button fx:id="refresh" layoutX="678.0" layoutY="127.0" mnemonicParsing="false" styleClass="btn" text="Atualizar" />
 </AnchorPane>
