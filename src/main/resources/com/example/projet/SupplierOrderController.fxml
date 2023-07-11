@@ -7,12 +7,12 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="725.0" styleClass="body" stylesheets="@styles/main.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.SupplierOrderController">
    <children>
-      <TableView fx:id="table" layoutX="329.0" layoutY="100.0" prefHeight="200.0" prefWidth="346.0">
+      <TableView fx:id="table" layoutX="279.0" layoutY="100.0" prefHeight="200.0" prefWidth="436.0">
         <columns>
           <TableColumn fx:id="idCollumn" prefWidth="47.20001220703125" text="ID" />
-          <TableColumn fx:id="nomeCollum" prefWidth="108.79998779296875" text="Nome do Pedido" />
-            <TableColumn fx:id="dataCollum" prefWidth="91.20001220703125" text="Data Pedido" />
-            <TableColumn fx:id="EstadoCollum" prefWidth="96.80002441406248" text="Estado" />
+          <TableColumn fx:id="nomeCollum" prefWidth="134.39996337890625" text="Nome do Pedido" />
+            <TableColumn fx:id="dataCollum" prefWidth="108.00003051757812" text="Data Pedido" />
+            <TableColumn fx:id="EstadoCollum" prefWidth="136.0" text="Estado" />
         </columns>
       </TableView>
       <Button fx:id="refreshButton" layoutX="566.0" layoutY="45.0" mnemonicParsing="false" styleClass="btn" text="atualizar" />

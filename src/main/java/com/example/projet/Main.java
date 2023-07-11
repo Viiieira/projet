@@ -69,8 +69,8 @@ public class Main extends Application {
         String insertAdmin = "INSERT INTO Users (name, email, phone, nif, password)\n" +
                 "VALUES ('a', 'a@admin.com', '964159753', '741369852', 'a');\n" +
                 "INSERT INTO admin (id)\n" +
-                "VALUES (LASTVAL());" +
-                "INSERT INTO productcategory (name) VALUES ('Marca Branca');";
+                "VALUES (LASTVAL());";
+//                "INSERT INTO productcategory (name) VALUES ('Marca Branca');";
 
         try (Connection connection = dbConnection.getConnection();
              PreparedStatement statementInsert = connection.prepareStatement(insertAdmin)) {

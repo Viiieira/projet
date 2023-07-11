@@ -117,16 +117,17 @@ public class detalhesOrder {
                 "    pc.name AS category_name,\n" +
                 "    s.name AS supplier_name\n" +
                 "FROM\n" +
-                "    SupplierOrderItem soi\n" +
-                "    JOIN Product p ON p.id = soi.idProduct\n" +
-                "    JOIN ProductCategory pc ON pc.id = p.category\n" +
-                "    JOIN Supplier s ON s.id = soi.idSupllier\n" +
-                "\tJOIN SupplierOrder so ON so.id = soi.idOrder  \n" +
-                "\twhere so.id = 1;\n";
+                "    supplierorderitem soi\n" +
+                "    JOIN product p ON p.id = soi.idproduct\n" +
+                "    JOIN productCategory pc ON pc.id = p.category\n" +
+                "    JOIN supplier s ON s.id = soi.idsupllier\n" +
+                "    JOIN supplierOrder so ON so.id = soi.idorder\n" +
+                "WHERE so.id = ?";
 
         if (conn != null) {
             try {
                 PreparedStatement statement = conn.prepareStatement(query);
+                statement.setInt(1, idSupplierOrder);
                 ResultSet resultSet = statement.executeQuery();
 
                 while (resultSet.next()) {
@@ -149,7 +150,7 @@ public class detalhesOrder {
         return orderDetails;
     }
     public void setOrderDetails(int order) {
-
+        this.orderDetails = order;
     }
 
     private void openWindow(String fxmlFile, int selectedOrderId) {

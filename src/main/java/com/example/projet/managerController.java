@@ -12,16 +12,11 @@ import java.io.IOException;
 
 public class managerController {
     @FXML
-    private AnchorPane anchorPane;
-
-    @FXML
     private Button encerrarSessaoButton;
-
     @FXML
-    private Button gerirFuncionarioButton;
-
+    private Button produtosButton;
     @FXML
-    private Text adicionarCoisasText;
+    private Button SupplierOrder;
 
     @FXML
     public void initialize() {
@@ -42,6 +37,27 @@ public class managerController {
                 a.printStackTrace();
             }
         });
+
+        SupplierOrder.setOnAction(e ->{
+            openWindow("SupplierOrderController.fxml");
+        });
+
+        produtosButton.setOnMouseClicked(event ->{
+            openWindow("produtos.fxml");
+        });
+    }
+
+    private void openWindow(String fxmlFile) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            AnchorPane root = loader.load();
+
+            Stage newStage = new Stage();
+            newStage.setScene(new Scene(root));
+            newStage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 }
 

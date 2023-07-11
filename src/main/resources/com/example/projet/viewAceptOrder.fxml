@@ -5,15 +5,15 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="321.0" prefWidth="441.0" styleClass="body" stylesheets="@styles/main.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.viewAceptOrder">
+<AnchorPane prefHeight="321.0" prefWidth="620.0" styleClass="body" stylesheets="@styles/main.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.viewAceptOrder">
    <children>
-      <TableView fx:id="table" layoutX="9.0" layoutY="32.0" prefHeight="200.0" prefWidth="422.0">
+      <TableView fx:id="table" layoutX="9.0" layoutY="32.0" prefHeight="200.0" prefWidth="604.0">
         <columns>
           <TableColumn fx:id="idCollumn" prefWidth="40.79998779296875" text="ID" />
-          <TableColumn fx:id="NomePedidoColumn" prefWidth="108.0" text="Nome do Pedido" />
-            <TableColumn fx:id="DataPedidoColumn" prefWidth="103.20001220703125" text="Data Pedido" />
-            <TableColumn fx:id="DataEntregueColumn" prefWidth="94.39996337890625" text="Data Entregue" />
-            <TableColumn fx:id="estadoColumn" prefWidth="75.0" text="Estado" />
+          <TableColumn fx:id="NomePedidoColumn" prefWidth="167.19995880126953" text="Nome do Pedido" />
+            <TableColumn fx:id="DataPedidoColumn" prefWidth="128.79998779296875" text="Data Pedido" />
+            <TableColumn fx:id="DataEntregueColumn" prefWidth="151.199951171875" text="Data Entregue" />
+            <TableColumn fx:id="estadoColumn" prefWidth="110.39993286132812" text="Estado" />
         </columns>
       </TableView>
       <Button fx:id="backButton" layoutX="14.0" layoutY="259.0" mnemonicParsing="false" styleClass="btn" text="Voltar" />
