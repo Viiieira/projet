@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-free-6.4.0-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+<div id="authentication-form">
+    <h1>Login</h1>
+    <form method="post" action="/login" th:object="${loginRequest}">
+        <div class="input-field">
+            <label for="username-field">
+                Username <span class="required">*</span>
+            </label>
+            <input type="text" name="name" id="username-field" placeholder="John Doe" required autofocus/>
+        </div>
+        <div class="input-field" title="The password must contain at least one digit, one lowercase letter, one uppercase letter, one special character (not a word character, digit, whitespace, or colon), and have a length between 8 and 16 characters.">
+            <label for="pwd-field">
+                Password <span class="required">*</span>
+            </label>
+            <div class="pwd-group">
+                <input type="password" name="password" id="pwd-field"
+                       pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^\w\d\s:])([^\s]){8,16}$" placeholder="********" required/>
+                <i class="fa-solid fa-eye" onclick="togglePasswordVisibility(this)"></i>
+            </div>
+        </div>
+        <div th:if="${errorLogin}" class="login-response small">
+            <p th:text="${errorLogin}" data-status="error"></p>
+        </div>
+        <button class="btn" data-style="primary" type="submit">Enter</button>
+    </form>
+    <div class="redirect-link">
+        <p class="small">
+            Don't have an account? <a href="/register">Register</a>
+        </p>
+    </div>
+</div>
+
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
