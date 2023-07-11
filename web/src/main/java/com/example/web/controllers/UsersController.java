@@ -1,7 +1,9 @@
 package com.example.web.controllers;
 
 import com.example.web.models.ProductCategoryEntity;
+import com.example.web.models.ProductEntity;
 import com.example.web.models.UsersModel;
+import com.example.web.repository.ProductRepository;
 import com.example.web.services.UsersService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,11 +23,13 @@ public class UsersController {
 
     private final UsersService usersService;
     private final CategoryProductsRepository categoryRepository;
+    private final ProductRepository productRepository;
 
-    public UsersController(UsersService usersService, CategoryProductsRepository categoryRepository) {
+    public UsersController(UsersService usersService, CategoryProductsRepository categoryRepository, ProductRepository productRepository) {
 
         this.usersService = usersService;
         this.categoryRepository = categoryRepository;
+        this.productRepository = productRepository;
     }
 
     @GetMapping("/personal_page")
@@ -57,7 +61,9 @@ public class UsersController {
         }
 
         List<ProductCategoryEntity> categories = categoryRepository.findAll();
+        List<ProductEntity> products = productRepository.findAll();
         model.addAttribute("categories", categories);
+        model.addAttribute("products", products);
 
         return "products_page";
     }

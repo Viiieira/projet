@@ -8,10 +8,6 @@
     <title>Products</title>
     <link rel="stylesheet" type="text/css" href="css/fontawesome-free-6.4.0-web/css/all.css">
     <link rel="stylesheet" href="css/main.css">
-  <style>
-
-    .add-to-cart-btnm, .btn { display: none }
-  </style>
 </head>
 <body>
 
@@ -21,124 +17,28 @@
   <section>
     <h1>Products</h1>
 
-    <div class="category-products">
-      <h2 th:each="category : ${categories}">
-        <span th:text="${category.name}"></span>
-        <div class="category-products-wrapper" style="margin-top: 1.5rem">
-          <div class="product">
-            <div class="product-info">
-              <p>Product 1</p>
-              <p>10€</p>
-              <p>5 units</p>
+    <div class="categories-wrapper">
+      <div th:each="category : ${categories}" class="category">
+        <h2 th:text="${category.name}"></h2>
+        <div class="category-products">
+          <div th:each="product : ${products}" th:if="${product.category == category.id}" class="product">
+            <div class="product-line">
+              <span>Nome</span>
+              <span th:text="${product.name} ?: ''"></span>
             </div>
-            <button class="add-to-cart-btn btn" data-style="primary">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-          <div class="product">
-            <div class="product-info">
-              <p>Product 2</p>
-              <p>10€</p>
-              <p>10 units</p>
+            <div class="product-line">
+              <span>Price</span>
+              <span th:text="${product.price > 0 ? product.price + '€' : ''}"></span>
             </div>
-            <button class="add-to-cart-btn btn" data-style="primary">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-          <div class="product">
-            <div class="product-info">
-              <p>Product 3</p>
-              <p>10€</p>
-              <p>10 units</p>
+            <div class="product-line">
+              <span>Stock</span>
+              <span th:text="${product.stock != null ? product.stock + ' unit(s)' : ''}"></span>
             </div>
-            <button class="add-to-cart-btn btn" data-style="primary">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-          <div class="product">
-            <div class="product-info">
-              <p>Product 4</p>
-              <p>10€</p>
-              <p>10 units</p>
-            </div>
-            <button class="add-to-cart-btn btn" data-style="primary">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-          <div class="product">
-            <div class="product-info">
-              <p>Product 5</p>
-              <p>10€</p>
-              <p>10 units</p>
-            </div>
-            <button class="add-to-cart-btn btn" data-style="primary">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-          <div class="product">
-            <div class="product-info">
-              <p>Product 6</p>
-              <p>10€</p>
-              <p>10 units</p>
-            </div>
-            <button class="add-to-cart-btn btn" data-style="primary">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-          <div class="product">
-            <div class="product-info">
-              <p>Product 7</p>
-              <p>10€</p>
-              <p>10 units</p>
-            </div>
-            <button class="add-to-cart-btn btn" data-style="primary">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-          <div class="product">
-            <div class="product-info">
-              <p>Product 8</p>
-              <p>10€</p>
-              <p>10 units</p>
-            </div>
-            <button class="add-to-cart-btn btn" data-style="primary">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-          <div class="product">
-            <div class="product-info">
-              <p>Product 9</p>
-              <p>10€</p>
-              <p>10 units</p>
-            </div>
-            <button class="add-to-cart-btn btn" data-style="primary">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span>Add to Cart</span>
-            </button>
-          </div>
-          <div class="product">
-            <div class="product-info">
-              <p>Product 10</p>
-              <p>10€</p>
-              <p>10 units</p>
-            </div>
-            <button class="add-to-cart-btn btn" data-style="primary">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span>Add to Cart</span>
-            </button>
           </div>
         </div>
-      </h2>
-
+      </div>
     </div>
+
   </section>
 </main>
 
