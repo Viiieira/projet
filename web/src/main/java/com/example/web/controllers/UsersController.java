@@ -50,7 +50,7 @@ public class UsersController {
     }
 
     @GetMapping("/products")
-    public String getProductspage(Model model) {
+    public String getProductsPage(Model model) {
         if (!model.containsAttribute("userLogin")) {
             System.out.println("No logged user, redirecting to login");
             return "redirect:/login";
